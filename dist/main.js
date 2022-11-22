@@ -1,1 +1,0 @@
-!function(){const t=document.createElement("h1");t.textContent="Cook it!",document.body.appendChild(t)}();
