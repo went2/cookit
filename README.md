@@ -2,7 +2,7 @@
 
 一个从零搭建的未使用框架的查菜谱应用。
 
-## webpack 配置
+## 1. webpack 配置
 
 ### 安装
 
@@ -21,7 +21,7 @@
 
 以下选项是配置的起手式：
 
-`entry`, `output`, `devServer`, 处理css的loader, 处理图片的loader,  html 模板
+`entry`, `output`, `devServer`, 处理css的loader, 处理图片的loader, html 模板
 
 ```js
 // webpack.config.js
@@ -63,3 +63,5 @@ module.exports = {
   }
 }
 ```
+
+##
