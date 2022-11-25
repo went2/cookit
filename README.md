@@ -2,66 +2,12 @@
 
 一个从零搭建的未使用框架的查菜谱应用。
 
-## 1. webpack 配置
+做了这些事：
 
-### 安装
+1.[ webpack 基本配置]((./docs/webpack%20%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE.md))
 
-1. 安装 `webpack`, `webpack-cli`, 'webpack-dev-server'
+webpack 是个源代码打包工具，所谓打包，可理解为—— 根据 module 的导入导出找到源代码文件 => 对源代码做编译（去除空格、压缩等工作） => 生成编译后的代码——的过程。开发者写源代码，然后把源代码交给 webpack，经过 webpack 打包，得到可部署的代码。前端常用框架的脚手架工具，如 `create-react-app`, `vue-cli` 都采用 webpack 打包，并做好了基本配置。
 
-  > npm install --save-dev webpack webpack-cli webpack-dev-server
+webpack 是个通用的打包工具，任何一个从空白文件夹开始的项目都可以引入它，所有会有一些通用配置，本项目探索引入 webpack 需要做哪些基本配置，这些配置可以保留成所谓的样板代码(boilerplate)供后续新项目参考使用，脚手架工具的好处在于给开发者省下写样板代码的时间。
 
-2. 基本 loader: 处理css
-
-  > npm install --save-dev style-loader css-loader
-
-3. html 模板：`html-webpack-plugin`
-  > npm install --save-dev style-loader css-loader
-
-### 配置
-
-以下选项是配置的起手式：
-
-`entry`, `output`, `devServer`, 处理css的loader, 处理图片的loader, html 模板
-
-```js
-// webpack.config.js
-module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true
-  },
-  devServer: {
-    static: './dist',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-      }
-    ],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({ 
-      template: 'index.html',
-      title: 'Cook it!'
-    }),
-  ]
-}
-
-// package.json 的 script 字段
-{
-  "script": {
-    "dev": "webpack serve --open --mode development",
-    "build": "webpack --mode production"
-  }
-}
-```
-
-##
+详见文档[webpack 基本配置](./docs/webpack%20%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE.md)

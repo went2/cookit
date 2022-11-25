@@ -25,10 +25,6 @@ module.exports = {
           filename: 'img/[name].[hash:6][ext]'
         }
       },
-      {
-        test: /\.html$/i,
-        loader: "html-loader",
-      },
     ],
   },
   plugins: [
