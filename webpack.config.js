@@ -22,14 +22,15 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'img/[name].[hash:6][ext]'
+          filename: 'imgs/[name].[hash:6][ext]',
+          publicPath: './'
         }
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({ 
-      template: 'index.html',
+      template: 'index.ejs',
       title: 'Cook it!',
       favicon: 'favicon.png',
       hash: true

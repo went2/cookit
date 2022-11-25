@@ -24,17 +24,18 @@ webpack 本身能处理 js 和 json 文件，不用借助 loader 和插件，对
 
 > npm install --save-dev mini-css-extract-plugin
 
-1.2.2 html template
+
+1.2.3 html template
 
 我需要让 webpack 将打包后的 js代码、css文件、图片文件插入自定义的 `.html` 模板文件中，这要借助`html-webpack-plugin` 实现。
+
+自定义的模板使用 ejs 文件，[避免与 html-loader 的冲突](https://github.com/kaivin/webpack4.x/blob/master/README/18%EF%BC%9Ahtml-loader%E4%B8%8EHtmlWebpackPlugin%E7%9A%84%E5%86%B2%E7%AA%81.md)，其中引入图片的方式也都使用 ejs 语法。
 
 > npm install --save-dev html-webpack-plugin
 
 ##  2. 配置
 
 安装了 loader 和 plugins 还要做配置才会生效，webpack 配置在项目根目录的 `webpack.config.js`文件中进行。
-
-`entry`, `output`, `devServer`, 处理css的loader, 处理图片的loader, html 模板
 
 ```js
 // webpack.config.js
@@ -62,14 +63,14 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
         generator: { // 配置输出文件
-          filename: 'img/[name].[hash:6][ext]'
+          filename: 'imgs/[name].[hash:6][ext]'
         }
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({ 
-      template: 'index.html', // 自定义html模板文件，放在根目录
+      template: 'index.ejs', // 自定义html模板文件，使用ejs文件，避免与html-loader冲突
       title: 'Cook it!',
       favicon: 'favicon.png',
       hash: true
