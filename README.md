@@ -4,10 +4,10 @@
 
 做了这些事：
 
-1.[ webpack 基本配置]((./docs/webpack%20%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE.md))
+1.webpack 基本配置
 
 webpack 是个源代码打包工具，所谓打包，可理解为—— 根据 module 的导入导出找到源代码文件 => 对源代码做编译（去除空格、压缩等工作） => 生成编译后的代码——的过程。开发者写源代码，然后把源代码交给 webpack，经过 webpack 打包，得到可部署的代码。前端常用框架的脚手架工具，如 `create-react-app`, `vue-cli` 都采用 webpack 打包，并做好了基本配置。
 
 webpack 是个通用的打包工具，任何一个从空白文件夹开始的项目都可以引入它，所有会有一些通用配置，本项目探索引入 webpack 需要做哪些基本配置，这些配置可以保留成所谓的样板代码(boilerplate)供后续新项目参考使用，脚手架工具的好处在于给开发者省下写样板代码的时间。
 
-详见文档[webpack 基本配置](./docs/webpack%20%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE.md)
+详见文档 [webpack 基本配置](https://github.com/went2/webpack5.x-config#readme)
