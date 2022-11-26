@@ -60,7 +60,6 @@ const detailServingsController = function(newServings) {
 }
 
 
-
 export default function init () {
   searchView.addEventHandler(searchListController);
   paginationView.addEventHandler(paginationController);
