@@ -34,8 +34,8 @@ export default class BaseView {
 
       // update change ATTRIBUTES
       if(!newEl.isEqualNode(curEl)) {
-        Array.from(newEl.attributes).forEach(arrt => 
-          curEl.setAttribute(arrt.name, attr.value)
+        Array.from(newEl.attributes).forEach(attr => 
+          curEl.setAttribute(attr.name, attr.value)
         );
       }
     })
